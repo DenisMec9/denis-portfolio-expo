@@ -15,19 +15,31 @@ export default function Layout() {
 function MainTabs() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+
   return (
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
-      <Tabs screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, size }) => {
-          const icons: any = { index: 'home', sobre: 'person', experiencia: 'briefcase', projeto: 'code-slash', contato: 'chatbox' };
-          return <Ionicons name={icons[route.name]} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: '#00FF80',
-        tabBarInactiveTintColor: isDark ? '#7c7c7c' : '#6b7280',
-        tabBarStyle: { backgroundColor: isDark ? '#000' : '#fff', borderTopWidth: 0.3 },
-        headerShown: false
-      })} />
+      <Tabs
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => {
+            const icons: Record<string, keyof typeof Ionicons.glyphMap> = {
+              index: 'home',
+              sobre: 'person',
+              contato: 'chatbox',
+              projeto: 'code-slash',
+              experiencia: 'briefcase',
+            };
+            return <Ionicons name={icons[route.name]} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#00FF80',
+          tabBarInactiveTintColor: isDark ? '#7c7c7c' : '#6b7280',
+          tabBarStyle: {
+            backgroundColor: isDark ? '#000' : '#fff',
+            borderTopWidth: 0.3,
+          },
+          headerShown: false,
+        })}
+      />
     </>
   );
 }
