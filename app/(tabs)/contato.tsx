@@ -5,9 +5,9 @@ import { ThemedView } from '@components/ui/themed-view';
 import * as Linking from 'expo-linking';
 
 const contacts = [
-  { icon: 'logo-whatsapp', url: 'https://wa.me/5581999999999' },
-  { icon: 'logo-linkedin', url: 'https://linkedin.com' },
-  { icon: 'logo-github', url: 'https://github.com' }
+  { icon: 'logo-whatsapp', url: 'https://wa.me/5581988954430' },
+  { icon: 'logo-linkedin', url: 'https://linkedin.com/in/denis-barbosa-7b98972bb/' },
+  { icon: 'logo-github', url: 'https://github.com/DenisMec9' }
 ];
 
 export default function Contato() {

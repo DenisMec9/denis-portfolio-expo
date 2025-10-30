@@ -1,32 +1,24 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "ES2021",
-      "DOM"
-    ],
+    "lib": ["ES2021", "DOM"],
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
     "allowJs": true,
     "noEmit": true,
     "isolatedModules": true,
-    "types": [
-      "nativewind/types"
-    ],
+    "types": ["nativewind/types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@components/*": [
-        "app/components/*"
-      ]
+      "@/*": ["app/*"],
+      "@assets/*": ["app/assets/*"],
+      "@components/*": ["app/components/*"],
+      "@ui/*": ["app/components/ui/*"],
+      "@context/*": ["app/context/*"],
+      "@data": ["app/data.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    ".expo"
-  ],
+  "exclude": ["node_modules", ".expo"],
   "extends": "expo/tsconfig.base"
 }
