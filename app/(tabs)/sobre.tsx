@@ -14,15 +14,20 @@ export default function Sobre() {
           transition={{ type: 'timing', duration: 800 }}
           style={{ alignItems: 'center' }}
         >
+          {/* ===== Imagem de Perfil ===== */}
           <Image
-            source={require('../assets/images/perfil.jpeg')} // ✅ Caminho corrigido
+            source={require('../assets/images/perfil.jpeg')}
             style={{
               width: 150,
               height: 150,
               borderRadius: 75,
+              borderWidth: 2,
+              borderColor: '#00FF80',
+              marginBottom: 15,
             }}
           />
 
+          {/* ===== Título ===== */}
           <MotiText
             style={{
               fontSize: 28,
@@ -31,60 +36,69 @@ export default function Sobre() {
               textAlign: 'center',
               textShadowColor: '#00FF80',
               textShadowRadius: 15,
-              marginTop: 10,
+              marginBottom: 10,
             }}
           >
             👨‍💻 Sobre Mim
           </MotiText>
 
+          {/* ===== Descrição ===== */}
           <MotiText
             style={{
-              color: '#d8ffd8',
+              color: '#00FF80',
               lineHeight: 24,
-              marginTop: 12,
+              marginTop: 4,
               fontSize: 15,
               textAlign: 'justify',
             }}
           >
-            Olá! Me chamo <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Denis Barbosa</MotiText> 
-            e sou apaixonado por tecnologia, inovação e design. Atualmente, curso 
-            <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}> Sistemas para Internet na UNICAP</MotiText> 
-            e participo da <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Residência Porto Digital</MotiText> 
-            pela <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Ferreira Costa</MotiText>.
+            Olá! Sou <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Denis Barbosa</MotiText>, 
+            desenvolvedor focado em criar soluções que unem tecnologia, design e propósito. 
+            Tenho experiência em projetos Web, Mobile e IoT, sempre buscando entregar produtos 
+            que gerem impacto real e melhorem a experiência das pessoas.
           </MotiText>
 
           <MotiText
             style={{
-              color: '#cfeccf',
+              color: '#00FF80',
               lineHeight: 24,
               marginTop: 12,
               textAlign: 'justify',
             }}
           >
-            Já atuei em projetos reais nas áreas de 
-            <MotiText style={{ color: '#00FF80' }}> Front-end, Back-end e IoT</MotiText>, 
-            utilizando tecnologias como React, Next.js, Node.js, Parse (Back4App), Prisma, PostgreSQL e Spring Boot.
+            Atualmente, curso <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Sistemas para Internet na UNICAP</MotiText> 
+            e participo da <MotiText style={{ fontWeight: 'bold', color: '#00FF80' }}>Residência Porto Digital</MotiText>. 
+            Ao longo dessa jornada, venho desenvolvendo projetos com tecnologias como 
+            React, Next.js, Node.js, Spring Boot, Prisma e Parse (Back4App).
           </MotiText>
 
+          {/* ===== Frase Final ===== */}
           <MotiText
             style={{
-              color: '#a7f7bf',
+              color: '#00FF80',
               lineHeight: 22,
-              marginTop: 20,
+              marginTop: 25,
               fontStyle: 'italic',
               textAlign: 'center',
             }}
           >
-            “A tecnologia só faz sentido quando conecta pessoas.” 🚀
+            “Transformar ideias em soluções digitais é o que me move.” 🚀
           </MotiText>
 
           {/* ===== Contato e Redes ===== */}
-          <View style={{ marginTop: 35, width: '100%', alignItems: 'center' }}>
-            <MotiText style={{ color: '#00FF80', fontWeight: '700', fontSize: 20, marginBottom: 12 }}>
+          <View style={{ marginTop: 40, width: '100%', alignItems: 'center' }}>
+            <MotiText
+              style={{
+                color: '#00FF80',
+                fontWeight: '700',
+                fontSize: 20,
+                marginBottom: 15,
+              }}
+            >
               🌐 Contato & Redes
             </MotiText>
 
-            <View style={{ gap: 10 }}>
+            <View style={{ gap: 12 }}>
               <TouchableOpacity onPress={() => Linking.openURL('mailto:denisfilho2@exemplo.com')}>
                 <Row icon="mail" text="denisfilho2@exemplo.com" />
               </TouchableOpacity>
@@ -112,11 +126,12 @@ export default function Sobre() {
   );
 }
 
+/* ====== Componente de Linha para Contatos ====== */
 function Row({ icon, text }: { icon: keyof typeof Ionicons.glyphMap; text: string }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
       <Ionicons name={icon} size={20} color="#00FF80" />
-      <MotiText style={{ color: '#d8ffd8', fontSize: 15 }}>{text}</MotiText>
+      <MotiText style={{ color: '#00FF80', fontSize: 15 }}>{text}</MotiText>
     </View>
   );
 }

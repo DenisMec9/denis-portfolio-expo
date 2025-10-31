@@ -1,5 +1,50 @@
 {
-  "plugins": [
-    "expo-font"
-  ]
+  "expo": {
+    "name": "denis-portfolio-matrix",
+    "slug": "denis-portfolio-matrix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "denisportfoliomatrix",
+    "userInterfaceStyle": "automatic",
+    "platforms": ["android", "ios", "web"],
+
+    "plugins": [
+      "expo-font"
+    ],
+
+    "updates": {
+      "url": "https://u.expo.dev/20ff96b2-cd4e-47f1-a49c-55dc3acd4be9",
+      "fallbackToCacheTimeout": 0
+    },
+
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "20ff96b2-cd4e-47f1-a49c-55dc3acd4be9"
+      }
+    },
+
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.denisbarbosa.portfolio"
+    },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.denisbarbosa.portfolio"
+    },
+
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+
+    "owner": "denis_barbosa"
+  }
 }
